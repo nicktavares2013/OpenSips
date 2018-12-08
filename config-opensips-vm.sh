@@ -8,7 +8,7 @@ cat << EOF > /etc/hosts
 10.0.0.23 pbx3
 EOF
 IFLAN=` ip -o -4 l | awk '{ print $ 2 }'  | sed 's/://g' | egrep -v lo| tail -1`
-cat << EOF > /etc/network/interfaces.s/intnet-config
+cat << EOF > /etc/network/interfaces.d/intnet-config
 iface $IFLAN inet static
 address 10.0.0.10/25
 EOF
